@@ -1,0 +1,12 @@
+[submodule "cortex-a9"]
+	path = cortex-a9
+	url = git@bitbucket.org:michele_dionisio/cortex-a9.git
+[submodule "qemu"]
+	path = qemu
+	url = git@github.com:mdionisio/qemu.git
+[submodule "busybox"]
+	path = busybox
+	url = git://busybox.net/busybox.git
+[submodule "linux"]
+	path = linux
+	url = git@github.com:mdionisio/linux.git
