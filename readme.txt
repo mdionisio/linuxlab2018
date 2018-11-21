@@ -21,13 +21,14 @@ rm -rf _install ; mkdir _install ; ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- m
 
 cd ..
 
-# installazione kernel
 
 cd llinux
 
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- imx_v6_v7_defconfig
 
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j4 menuconfig
+
+# installazione kernel  (kernel mytest)
 
   Kernel hacking  --->
         [*] KGDB: kernel debugger  --->
@@ -41,8 +42,23 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j4 menuconfig
 		-- Misc Device
 			Mytest   [non come modulo per semplificare il debug]
 
+# installazione kernel  (kernel master)
+
+  Kernel hacking  --->
+        [*] KGDB: kernel debugger  --->
+                <*>   KGDB: use kgdb over the serial console
+        -> Compile-time checks and compiler options
+                [*] Compile the kernel with debug info
+		[*] Generate dwarf4 debuginfo
+		[*] Provide GDB scripts for kernel debugging
+		
+	-- Device Driver
+		-- Misc Device
+			QEMU test driver   [non come modulo per semplificare il debug]
 
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j4 
+
+
 
 rm -rf _install ; mkdir _install ; make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j4 modules_install INSTALL_MOD_PATH=$(pwd)/_install
 
