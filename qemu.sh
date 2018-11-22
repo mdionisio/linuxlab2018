@@ -14,6 +14,10 @@ else
 	-kernel ./linux/arch/arm/boot/zImage \
 	-initrd initrd-test.img.gz \
 	-append "console=ttymxc0" \
-	-nographic -dtb ./linux/arch/arm/boot/dts/imx6q-sabrelite.dtb 
+	-dtb ./linux/arch/arm/boot/dts/imx6q-sabrelite.dtb \
+	-global mytest.data1=2 \
+	-serial mon:stdio \
+	-nographic \
+	-monitor telnet:127.0.0.1:55555,server,nowait
 	
 fi
