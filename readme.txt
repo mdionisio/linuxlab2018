@@ -90,11 +90,19 @@ cd ..
 
 ./create.sh
 
-# start linux
+# start linux (TEST)
 
 ./qemu.sh
 
-/cat /proc/iomem
+cat /proc/iomem  | grep qemu
+cat /proc/interrupts  | grep qemu
+
+cat /dev/qemu-test-0
+echo "1" > /dev/qemu-test-0
+cat /proc/interrupts  | grep qemu
+echo "2" > /dev/qemu-test-0
+cat /dev/qemu-test-0
+
 
 
 
