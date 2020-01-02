@@ -2,12 +2,12 @@
 
 apt-get install build-essential
 apt-get install crossbuild-essential-armhf
-apt-get install gcc-arm-linux-gueabihf
+apt-get install gcc-arm-linux-gnueabihf
 apt-get install gcc-arm-none-eabi
 apt-get install libncurses5-dev
 apt-get install bison flex libssl-dev bc
 apt-get install python pkg-config libglib2.0-dev libpixman-1-dev
-apt-get install sudo cpio lzop gzip
+apt-get install sudo cpio lzop gzip kmod
 apt-get install gdb-multiarch
 
 # installazione busybox
